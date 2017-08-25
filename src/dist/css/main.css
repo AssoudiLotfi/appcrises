@@ -1,0 +1,35 @@
+th {
+    
+    font-weight: normal;    
+    border-left: 0 none;    
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    border-top: 0 none;
+    border-bottom: 0 none;
+    border-right: 1px solid #E1E1E1!important;
+    text-align: left!important;
+    height: 27px;
+    padding: 0 2px;
+}
+
+.div-tab{
+      overflow-x: scroll;
+    
+}
+
+.blue-head{
+    background: #438EB9; 
+    height: 40px;   
+     line-height: 24px;   
+      color: #FFF;   
+       padding: 0;   
+       font-size: 15px;
+}
+
+
+td{
+    
+   
+    height: 23px;
+}
