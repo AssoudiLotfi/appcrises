@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
                     console.log(JSON.parse(localStorage.getItem('currentUser')))
                     if(localStorage.getItem('currentUser')!=undefined){
                         console.log()
-                       this.router.navigate(['home']);
+                       this.router.navigate(['home/crise']);
                     }
                     else 
                     return 'user not found'

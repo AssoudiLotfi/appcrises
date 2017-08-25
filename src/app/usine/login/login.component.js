@@ -33,7 +33,7 @@ var LoginComponent = (function () {
             console.log(JSON.parse(localStorage.getItem('currentUser')));
             if (localStorage.getItem('currentUser') != undefined) {
                 console.log();
-                _this.router.navigate(['home']);
+                _this.router.navigate(['home/crise']);
             }
             else
                 return 'user not found';
