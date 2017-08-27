@@ -20,7 +20,8 @@ const AppRoutes: Routes = [
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'crise', component: CriseComponent},
-      { path: 'lot', component: LotComponent },      
+      { path: 'lot', component: LotComponent },
+      { path: 'lot/:idcrise', component: LotComponent },      
       { path: 'defaut', component: DefautComponent },      
       { path: 'etude'  , component : EtudeComponent },
       { path: 'ajoutlot', component: AjoutlotComponent },

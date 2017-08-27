@@ -22,12 +22,24 @@ var LotComponent = (function () {
     }
     LotComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.loading = true;
-        this.lotService.getListLot()
-            .subscribe(function (response) {
-            _this.getdata = response;
-            console.log(_this.getdata);
-        }, function (error) { return console.log("error : " + error); });
+        this.sub = this.route
+            .queryParams
+            .subscribe(function (params) {
+            _this.idcrise = +params['idcrise'];
+            _this.loading = true;
+            if (_this.idcrise) {
+            }
+            else {
+                _this.lotService.getListLot()
+                    .subscribe(function (response) {
+                    _this.getdata = response;
+                    console.log(_this.getdata);
+                }, function (error) { return console.log("error : " + error); });
+            }
+        });
+    };
+    LotComponent.prototype.ngOnDestroy = function () {
+        this.sub.unsubscribe();
     };
     LotComponent.prototype.goAjoutlot = function () {
         this.router.navigate(['home/ajoutlot']);

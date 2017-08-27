@@ -39,6 +39,9 @@ var CriseComponent = (function () {
     CriseComponent.prototype.goAcrise = function () {
         this.router.navigate(['home/ajoutcrise']);
     };
+    CriseComponent.prototype.getLotbyCrise = function (idcrise) {
+        this.router.navigate(['home/lot', idcrise]);
+    };
     CriseComponent.prototype.doSomething = function () {
     };
     return CriseComponent;

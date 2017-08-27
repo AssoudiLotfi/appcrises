@@ -15,20 +15,42 @@ export class LotComponent implements OnInit {
   results: Object;
   searchTerm$ = new Subject<string>();
 
+  idcrise: number;
+  private sub: any;
+
+
 constructor( private route : ActivatedRoute, private router : Router,private lotService: LotService){
  
 }
  ngOnInit() {
-    this.loading = true;
-        this.lotService.getListLot()
+   this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        
+        this.idcrise = +params['idcrise'];
+
+        this.loading = true;
+
+        if (this.idcrise) {
+          // hné
+        } else {
+          this.lotService.getListLot()
           .subscribe(
           (response) => { this.getdata = response;
              console.log(this.getdata);
           },
           (error) => console.log("error : " + error)
             );
+        }
+        
+            
+      });
   
  }
+
+ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
 
  goAjoutlot() {
    this.router.navigate(['home/ajoutlot']);

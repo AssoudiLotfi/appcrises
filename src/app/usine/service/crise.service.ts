@@ -18,11 +18,20 @@ export class CriseService {
         return this.http.delete('http://localhost:8080/GestionCrise/rest/crise/byid/'+idcrise)
         .subscribe((ok)=>{console.log(ok)});
     }
-    save(crise:any[]){
-        return this.http.post('http://localhost:8080/GestionCrise/rest/crise/savecrise',crise)
-        .map((data:Response) => data.json());
+    save(crise:any){
+        console.log(crise);
+        return this.http.post('http://localhost:8080/GestionCrise/rest/crise/savecrise', crise)
+        .subscribe(
+            // Successful responses call the first callback.
+            (data:any) => {console.log(data)},
+            // Errors will call this callback instead:
+            (err: any) => {
+            console.log('Something went wrong!', err);
+            }
+        );
 
     }
+    
    
     
     

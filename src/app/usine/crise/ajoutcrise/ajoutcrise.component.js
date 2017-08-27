@@ -10,16 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var crise_service_1 = require("../../service/crise.service");
 var AjoutcriseComponent = (function () {
-    function AjoutcriseComponent(route, router) {
+    function AjoutcriseComponent(route, router, criseService) {
         this.route = route;
         this.router = router;
+        this.criseService = criseService;
+        this.model = {
+            progression: "New"
+        };
     }
     AjoutcriseComponent.prototype.ngOnInit = function () {
         //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
         //Add 'implements OnInit' to the class.
     };
-    AjoutcriseComponent.prototype.save = function () {
+    AjoutcriseComponent.prototype.save = function (model) {
+        model.usine_idusine = JSON.parse(localStorage.getItem('currentUser')).usine_idusine;
+        console.log(model);
+        this.criseService.save(model);
     };
     AjoutcriseComponent.prototype.godefaut = function () {
         this.router.navigate(['defaut']);
@@ -35,7 +43,7 @@ AjoutcriseComponent = __decorate([
         styleUrls: ['./ajoutcrise.component.css'],
         templateUrl: './ajoutcrise.component.html',
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router, crise_service_1.CriseService])
 ], AjoutcriseComponent);
 exports.AjoutcriseComponent = AjoutcriseComponent;
 //# sourceMappingURL=ajoutcrise.component.js.map

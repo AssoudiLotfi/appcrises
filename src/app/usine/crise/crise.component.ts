@@ -51,6 +51,9 @@ refresh(){
    this.router.navigate(['home/ajoutcrise']);
  }
 
+getLotbyCrise(idcrise: number) {
+this.router.navigate(['home/lot', idcrise ]);
+}
 
 
  doSomething(){

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule,Router, ActivatedRoute} from '@angular/router';
-
+import { CriseService } from '../../service/crise.service';
 
 @Component({
   selector: 'ajoutcrise',
@@ -9,8 +9,11 @@ import { RouterModule,Router, ActivatedRoute} from '@angular/router';
 
 })
 export class AjoutcriseComponent implements OnInit { 
-
-constructor(private route : ActivatedRoute, private router : Router){}
+ model: any = {
+   progression :"New"
+   
+ };
+constructor(private route : ActivatedRoute, private router : Router, private criseService : CriseService){}
 
  ngOnInit() {
    
@@ -18,7 +21,11 @@ constructor(private route : ActivatedRoute, private router : Router){}
    //Add 'implements OnInit' to the class.
    
  }
- save(){
+ save(model:any){
+   model.usine_idusine = JSON.parse(localStorage.getItem('currentUser')).usine_idusine;
+   console.log(model);
+   this.criseService.save(model)
+
  
  }
 godefaut() {

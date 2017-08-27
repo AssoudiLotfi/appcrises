@@ -24,8 +24,15 @@ var CriseService = (function () {
             .subscribe(function (ok) { console.log(ok); });
     };
     CriseService.prototype.save = function (crise) {
+        console.log(crise);
         return this.http.post('http://localhost:8080/GestionCrise/rest/crise/savecrise', crise)
-            .map(function (data) { return data.json(); });
+            .subscribe(
+        // Successful responses call the first callback.
+        function (data) { console.log(data); }, 
+        // Errors will call this callback instead:
+        function (err) {
+            console.log('Something went wrong!', err);
+        });
     };
     return CriseService;
 }());

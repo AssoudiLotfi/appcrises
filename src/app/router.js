@@ -17,6 +17,7 @@ var AppRoutes = [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'crise', component: crise_component_1.CriseComponent },
             { path: 'lot', component: lot_component_1.LotComponent },
+            { path: 'lot/:idcrise', component: lot_component_1.LotComponent },
             { path: 'defaut', component: defaut_component_1.DefautComponent },
             { path: 'etude', component: etude_component_1.EtudeComponent },
             { path: 'ajoutlot', component: ajoutlotf_component_1.AjoutlotComponent },
