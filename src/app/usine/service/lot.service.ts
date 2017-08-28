@@ -15,6 +15,11 @@ export class LotService {
           .map((res : Response) => res.json())
        
     }
+
+    getLotByIdCrise(idcrise : number){
+        return this.http.get('http://localhost:8080/GestionCrise/rest/Lot/ByIdCrise/'+idcrise)
+        .map((res : Response) => res.json())
+    }
    
     
     

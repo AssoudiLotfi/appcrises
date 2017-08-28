@@ -7,8 +7,8 @@
 
         <div class="blue-head">
             List Lot
-           <input
-    (keyup)=" searchTerm$.next($event.target.value)" style="color:black;" placeholder="Serch">
+            <input #search placeholder="search.."  (keyup)="0" style="color:black;    width: 90px;margin-left: 907px">
+          
         </div>
         <!-- /.panel-heading -->
         <div class="div-tab">
@@ -33,7 +33,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="odd gradeX" *ngFor="let d of getdata | slice:0:9">
+                    <tr class="odd gradeX" *ngFor="let d of (getdata | search: search.value )">
                          <td >
       <span class="glyphicon glyphicon-trash"  aria-hidden="true"  style="color:red"></span> 
    </td>

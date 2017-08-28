@@ -40,7 +40,7 @@ var CriseComponent = (function () {
         this.router.navigate(['home/ajoutcrise']);
     };
     CriseComponent.prototype.getLotbyCrise = function (idcrise) {
-        this.router.navigate(['home/lot', idcrise]);
+        this.router.navigate(['home/lot/{idcrise}'], { queryParams: { page: idcrise } });
     };
     CriseComponent.prototype.doSomething = function () {
     };

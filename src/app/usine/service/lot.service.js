@@ -19,6 +19,10 @@ var LotService = (function () {
         return this.http.get('http://localhost:8080/GestionCrise/rest/Lot/byCrise')
             .map(function (res) { return res.json(); });
     };
+    LotService.prototype.getLotByIdCrise = function (idcrise) {
+        return this.http.get('http://localhost:8080/GestionCrise/rest/Lot/ByIdCrise/' + idcrise)
+            .map(function (res) { return res.json(); });
+    };
     return LotService;
 }());
 LotService = __decorate([

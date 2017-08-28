@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule,Router, ActivatedRoute} from '@angular/router';
 import {DefautService} from '../service/defaut.service';
- 
+import {SearchPipe} from '../filter/pipe';
+
 @Component({
   selector: 'defaut',
   styleUrls:['./defaut.component.css'],

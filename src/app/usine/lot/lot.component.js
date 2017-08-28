@@ -28,6 +28,9 @@ var LotComponent = (function () {
             _this.idcrise = +params['idcrise'];
             _this.loading = true;
             if (_this.idcrise) {
+                _this.lotService.getLotByIdCrise(_this.idcrise)
+                    .subscribe(function (response) { return _this.getdata = response; });
+                console.log(_this.getdata);
             }
             else {
                 _this.lotService.getListLot()

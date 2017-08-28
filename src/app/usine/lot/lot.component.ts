@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule,Router, ActivatedRoute} from '@angular/router';
 import {LotService} from '../service/lot.service';
-
+import {SearchPipe} from '../filter/pipe';
 import { Subject } from 'rxjs/Subject';
 @Component({
   selector: 'lot',
@@ -32,7 +32,11 @@ constructor( private route : ActivatedRoute, private router : Router,private lot
         this.loading = true;
 
         if (this.idcrise) {
-          // hné
+          this.lotService.getLotByIdCrise(this.idcrise)
+          .subscribe(
+            (response) => this.getdata = response)
+               console.log(this.getdata);
+            
         } else {
           this.lotService.getListLot()
           .subscribe(

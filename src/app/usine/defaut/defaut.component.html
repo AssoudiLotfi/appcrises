@@ -8,6 +8,8 @@
 
       <div class="blue-head" >
          List Default
+         <input #search placeholder="search.."  (keyup)="0" style="color:black;    width: 90px;margin-left: 907px">
+         
       </div>
       <!-- /.panel-heading -->
       <div class="div-tab">
@@ -45,7 +47,7 @@
           <tbody>
          
         
-           <tr *ngFor="let d of getdata">
+           <tr *ngFor="let d of ( getdata | search: search.value )">
    <td >
       <span class="glyphicon glyphicon-trash"  aria-hidden="true"  style="color:red"></span> 
    </td>
