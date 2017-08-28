@@ -52,7 +52,7 @@ refresh(){
  }
 
 getLotbyCrise(idcrise: number) {
-this.router.navigate(['home/lot/{idcrise}'], { queryParams: { page: idcrise } });
+this.router.navigate(['home/lot/{idcrise}'], { queryParams: { idcrise: idcrise } });
 }
 
 

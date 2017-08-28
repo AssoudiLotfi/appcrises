@@ -30,13 +30,16 @@ constructor( private route : ActivatedRoute, private router : Router,private lot
         this.idcrise = +params['idcrise'];
 
         this.loading = true;
+        console.log(params)
 
         if (this.idcrise) {
           this.lotService.getLotByIdCrise(this.idcrise)
           .subscribe(
-            (response) => this.getdata = response)
+            (response) => {this.getdata = response;
                console.log(this.getdata);
-            
+             },
+          (error) => console.log("error : " + error)
+            );
         } else {
           this.lotService.getListLot()
           .subscribe(

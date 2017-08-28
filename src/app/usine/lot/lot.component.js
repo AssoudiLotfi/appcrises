@@ -27,10 +27,13 @@ var LotComponent = (function () {
             .subscribe(function (params) {
             _this.idcrise = +params['idcrise'];
             _this.loading = true;
+            console.log(params);
             if (_this.idcrise) {
                 _this.lotService.getLotByIdCrise(_this.idcrise)
-                    .subscribe(function (response) { return _this.getdata = response; });
-                console.log(_this.getdata);
+                    .subscribe(function (response) {
+                    _this.getdata = response;
+                    console.log(_this.getdata);
+                }, function (error) { return console.log("error : " + error); });
             }
             else {
                 _this.lotService.getListLot()
