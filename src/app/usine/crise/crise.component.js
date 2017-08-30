@@ -31,8 +31,6 @@ var CriseComponent = (function () {
         console.log(idcrise);
         this.criseService.delete(idcrise);
     };
-    CriseComponent.prototype.savecrise = function () {
-    };
     CriseComponent.prototype.refresh = function () {
         this.router.navigate(["crise"]);
     };

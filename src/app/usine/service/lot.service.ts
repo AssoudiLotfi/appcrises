@@ -15,11 +15,26 @@ export class LotService {
           .map((res : Response) => res.json())
        
     }
+    
 
     getLotByIdCrise(idcrise : number){
         return this.http.get('http://localhost:8080/GestionCrise/rest/Lot/ByIdCrise/'+idcrise)
         .map((res : Response) => res.json())
     }
+    save(lot:any){
+        console.log(lot);
+        return this.http.post('http://localhost:8080/GestionCrise/rest/Lot/savelot', lot)
+        .subscribe(
+            // Successful responses call the first callback.
+            (data:any) => {console.log(data)},
+            // Errors will call this callback instead:
+            (err: any) => {
+            console.log('Something went wrong!', err);
+            }
+        );
+
+    }
+
    
     
     

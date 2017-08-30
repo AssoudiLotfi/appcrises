@@ -10,14 +10,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var defaut_service_1 = require("../../service/defaut.service");
 var AjoutdefautComponent = (function () {
-    function AjoutdefautComponent(route, router) {
+    function AjoutdefautComponent(route, defautService, router) {
         this.route = route;
+        this.defautService = defautService;
         this.router = router;
+        this.model = {
+            progression: "New"
+        };
     }
     AjoutdefautComponent.prototype.ngOnInit = function () {
         //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
         //Add 'implements OnInit' to the class.
+    };
+    AjoutdefautComponent.prototype.save = function (model) {
+        model.lot_idlot = 2;
+        console.log(model);
+        this.defautService.save(model);
+        this.router.navigate(['home/defaut']);
     };
     AjoutdefautComponent.prototype.godefaut = function () {
         this.router.navigate(['defaut']);
@@ -33,7 +44,7 @@ AjoutdefautComponent = __decorate([
         styleUrls: ['./ajoutdefaut.component.css'],
         templateUrl: './ajoutdefaut.component.html',
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, defaut_service_1.DefautService, router_1.Router])
 ], AjoutdefautComponent);
 exports.AjoutdefautComponent = AjoutdefautComponent;
 //# sourceMappingURL=ajoutdefaut.component.js.map

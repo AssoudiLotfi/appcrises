@@ -19,6 +19,17 @@ var DefautService = (function () {
         return this.http.get('http://localhost:8080/GestionCrise/rest/defaut/byLot')
             .map(function (res) { return res.json(); });
     };
+    DefautService.prototype.save = function (defaut) {
+        console.log(defaut);
+        return this.http.post('http://localhost:8080/GestionCrise/rest/defaut/savedefaut', defaut)
+            .subscribe(
+        // Successful responses call the first callback.
+        function (data) { console.log(data); }, 
+        // Errors will call this callback instead:
+        function (err) {
+            console.log('Something went wrong!', err);
+        });
+    };
     return DefautService;
 }());
 DefautService = __decorate([

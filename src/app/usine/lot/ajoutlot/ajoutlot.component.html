@@ -4,15 +4,15 @@
         	<h3 class="panel-title">Add Lot</h3>
 	</div>
 <div class="panel-body">
-    <form>
+    <form name="formlot"  #form="ngForm" novalidate>
 <div class="col-md-12 col-sm-12">
         <div class="form-group col-md-6 col-sm-6">
             <label for="mobile">Progress*</label>
-            <input type="text" value="New"  class="form-control input-sm" id="mobile" readonly>
+            <input type="text"  class="form-control input-sm" id="mobile" readonly name="progression" [(ngModel)]="model.progression" #progression="ngModel" required>
         </div>
 	<div class = "form-group col-md-6 col-sm-6">
 		<label for="pincode">Centre Analyse*</label>
-	      <select class="form-control input-sm" id="years">
+	      <select class="form-control input-sm" id="years" name="centreanalyse" [(ngModel)]="model.centreanalyse" #centreanalyse="ngModel" required>
 		<option>SGR</option>
 		
 		
@@ -20,7 +20,7 @@
 	</div>
     <div class = "form-group col-md-6 col-sm-6">
 		<label for="pincode">Level of emergency*</label>
-	      <select class="form-control input-sm" id="years">
+	      <select class="form-control input-sm" id="years" name="levelemergency" [(ngModel)]="model.levelemergency" #levelemergency="ngModel" required>
 		
 		<option>Normal</option>
 		<option>Urgent</option>
@@ -29,11 +29,11 @@
 	</div>
 	<div class="form-group col-md-6 col-sm-6">
             <label for="city">Emergency comment*</label>
-            <input type="text" class="form-control input-sm" id="city" placeholder="">
+            <input type="text" class="form-control input-sm" id="city" name="emergencycomment" [(ngModel)]="model.emergencycomment" #emergencycommentl="ngModel" required>
         </div>
          <div class = "form-group col-md-6 col-sm-6">
 		<label for="pincode">Billing*</label>
-	      <select class="form-control input-sm" id="years">
+	      <select class="form-control input-sm" id="years" name="billing" [(ngModel)]="model.billing" #billing="ngModel" required>
 		
 		<option>Usine</option>
 		<option>R&D</option>
@@ -42,17 +42,17 @@
 	</div>
 	<div class="form-group col-md-6 col-sm-6">
             <label for="state">DTI priority*</label>
-            <input type="text" class="form-control input-sm" id="state" placeholder="">
+            <input type="text" class="form-control input-sm" id="state" name="dtipriority" [(ngModel)]="model.dtipriority" #dtipriority="ngModel" required>
         </div>
 	<div class="form-group col-md-6 col-sm-6">
             <label for="country">Parcel number</label>
-            <input type="text" class="form-control input-sm" id="country" placeholder="">
+            <input type="text" class="form-control input-sm" id="country" name="parcelnumber" [(ngModel)]="model.parcelnumber" #parcelnumber="ngModel" required>
         </div>
 	
 </div>
 <div class="col-md-12 col-sm-12">
 	<div class="form-group col-md-3 col-sm-3 pull-right" >
-			<input type="submit"  (click)="gohome()" class="btn btn-primary" value="Submit"/>
+			<input type="button"  (click)="save(model)" class="btn btn-primary" value="Submit"/>
 	</div>
 </div>
 </form>

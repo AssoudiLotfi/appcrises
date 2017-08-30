@@ -28,6 +28,7 @@ var AjoutcriseComponent = (function () {
         model.usine_idusine = JSON.parse(localStorage.getItem('currentUser')).usine_idusine;
         console.log(model);
         this.criseService.save(model);
+        this.router.navigate(['home/crise']);
     };
     AjoutcriseComponent.prototype.godefaut = function () {
         this.router.navigate(['defaut']);

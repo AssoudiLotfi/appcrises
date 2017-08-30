@@ -23,6 +23,17 @@ var LotService = (function () {
         return this.http.get('http://localhost:8080/GestionCrise/rest/Lot/ByIdCrise/' + idcrise)
             .map(function (res) { return res.json(); });
     };
+    LotService.prototype.save = function (lot) {
+        console.log(lot);
+        return this.http.post('http://localhost:8080/GestionCrise/rest/Lot/savelot', lot)
+            .subscribe(
+        // Successful responses call the first callback.
+        function (data) { console.log(data); }, 
+        // Errors will call this callback instead:
+        function (err) {
+            console.log('Something went wrong!', err);
+        });
+    };
     return LotService;
 }());
 LotService = __decorate([

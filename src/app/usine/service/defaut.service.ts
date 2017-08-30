@@ -15,8 +15,19 @@ export class DefautService {
           .map((res : Response) => res.json())
        
     }
-   
+    save(defaut:any){
+        console.log(defaut);
+        return this.http.post('http://localhost:8080/GestionCrise/rest/defaut/savedefaut', defaut)
+        .subscribe(
+            // Successful responses call the first callback.
+            (data:any) => {console.log(data)},
+            // Errors will call this callback instead:
+            (err: any) => {
+            console.log('Something went wrong!', err);
+            }
+        );  
     
     
+}
 }
 

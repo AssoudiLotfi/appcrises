@@ -42,15 +42,15 @@
                 <tbody>
                     <tr class="odd gradeX" *ngFor="let m of ( getdata | search: search.value )" (click)="getLotbyCrise(m.idcrise)" style="cursor: pointer;">
                          <td >
-      <span class="glyphicon glyphicon-trash" style="cursor: pointer;" (click)="delete(m.idcrise); $event.stopPropagation()" aria-hidden="true"  style="color:red"></span> 
+      <span class="glyphicon glyphicon-trash" (click)="delete(m.idcrise); $event.stopPropagation()" aria-hidden="true"  style="color:red; cursor: pointer;"></span> 
    </td>
    <td >
       <span class="glyphicon glyphicon-pencil" aria-hidden="true" style="color:#478FCA"></span>
    </td>
                         <td>{{m.idcrise}}</td>
                         <td style="color:red;min-width:100px">{{m.progression}}</td>
-                        <td style="min-width:90px">{{m.startdate | date}}</td>
-                        <td style="min-width:90px">{{m.finaldate | date}}</td>
+                        <td style="min-width:90px">{{m.startdate |  date:'shortDate'}}</td>
+                        <td style="min-width:90px">{{m.finaldate | date:'shortDate'}}</td>
                         <td style="min-width:90px">{{m.nature}}</td>
                         <td>{{m.familiesdefects}}</td>
                         <td>{{m.specialevent}}</td>
@@ -58,7 +58,7 @@
                         <td>{{m.deltalossaverage}}</td>
                         <td>{{m.screenshotantares}}</td>
                         <td>{{m.crisiscontext}}</td>
-                        <td style="min-width:90px">{{m.dateeventcrisis}}</td>
+                        <td style="min-width:90px">{{m.dateeventcrisis | date:'shortDate'}}</td>
                         <td>{{m.commentdti}}</td>
                         <td>{{m.commentusine}}</td>
                         <td>{{m.referencecrisis}}</td>

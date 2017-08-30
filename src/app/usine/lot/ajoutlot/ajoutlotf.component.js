@@ -10,14 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var lot_service_1 = require("../../service/lot.service");
 var AjoutlotComponent = (function () {
-    function AjoutlotComponent(route, router) {
+    function AjoutlotComponent(route, lotService, router) {
         this.route = route;
+        this.lotService = lotService;
         this.router = router;
+        this.model = {
+            progression: "New"
+        };
     }
     AjoutlotComponent.prototype.ngOnInit = function () {
-        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        //Add 'implements OnInit' to the class.
+    };
+    AjoutlotComponent.prototype.save = function (model) {
+        model.crise_idcrise = 31;
+        this.lotService.save(model);
+        this.router.navigate(['home/crise']);
     };
     AjoutlotComponent.prototype.gohome = function () {
         this.router.navigate(['home']);
@@ -30,7 +38,7 @@ AjoutlotComponent = __decorate([
         styleUrls: ['./ajoutlot.component.css'],
         templateUrl: './ajoutlot.component.html',
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, lot_service_1.LotService, router_1.Router])
 ], AjoutlotComponent);
 exports.AjoutlotComponent = AjoutlotComponent;
 //# sourceMappingURL=ajoutlotf.component.js.map

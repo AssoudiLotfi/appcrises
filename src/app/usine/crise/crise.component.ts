@@ -40,9 +40,7 @@ private criseService: CriseService){
    this.criseService.delete(idcrise);
   
  }
- savecrise(){
-   
- }
+
 refresh(){
   this.router.navigate(["crise"]);
 }

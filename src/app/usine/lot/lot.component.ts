@@ -12,6 +12,7 @@ import { Subject } from 'rxjs/Subject';
 export class LotComponent implements OnInit { 
     getdata : any[] ;
     loading = false;
+    
   results: Object;
   searchTerm$ = new Subject<string>();
 
@@ -33,6 +34,7 @@ constructor( private route : ActivatedRoute, private router : Router,private lot
         console.log(params)
 
         if (this.idcrise) {
+ 
           this.lotService.getLotByIdCrise(this.idcrise)
           .subscribe(
             (response) => {this.getdata = response;

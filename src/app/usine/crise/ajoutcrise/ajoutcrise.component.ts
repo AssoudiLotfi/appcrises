@@ -24,9 +24,9 @@ constructor(private route : ActivatedRoute, private router : Router, private cri
  save(model:any){
    model.usine_idusine = JSON.parse(localStorage.getItem('currentUser')).usine_idusine;
    console.log(model);
-   this.criseService.save(model)
+   this.criseService.save(model);
+   this.router.navigate(['home/crise']);
 
- 
  }
 godefaut() {
    this.router.navigate(['defaut']);
