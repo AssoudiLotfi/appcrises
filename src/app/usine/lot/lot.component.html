@@ -35,7 +35,7 @@
                 <tbody>
                     <tr class="odd gradeX" *ngFor="let d of (getdata | search: search.value )">
                          <td >
-      <span class="glyphicon glyphicon-trash"  aria-hidden="true"  style="color:red"></span> 
+      <span class="glyphicon glyphicon-trash" (click)="delete(d.idlot); $event.stopPropagation()"  aria-hidden="true"  style="color:red"></span> 
    </td>
    <td >
       <span class="glyphicon glyphicon-pencil" aria-hidden="true" style="color:#478FCA"></span>

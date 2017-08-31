@@ -29,5 +29,9 @@ constructor(private route : ActivatedRoute, private router : Router,private defa
  goAjoutdefaut(){
    this.router.navigate(['home/ajoutdefaut']);
  }
+ delete(iddefaut:any){
+   console.log(iddefaut);
+   this.defautService.delete(iddefaut);
+ }
 
 }

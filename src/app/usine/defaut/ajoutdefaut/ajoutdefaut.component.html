@@ -16,12 +16,12 @@
         </div>
         <div class="form-group col-md-6 col-sm-6">
             <label for="email">Default Date*</label>
-            <input type="date" class="form-control input-sm datepicker" id="email" name="defaultdate" [(ngModel)]="model.defaultdate" #defaultdate="ngModel" required>
+            <input type="date" class="form-control input-sm datepicker" id="email" name="defaultdate" [(ngModel)]="model.defaultdate" #defaultdate="ngModel" >
         </div>
         
 	<div class = "form-group col-md-6 col-sm-6">
 		<label for="pincode">Alignment*</label>
-	      <select class="form-control input-sm" id="years" name="alignment" [(ngModel)]="model.alignment" #alignment="ngModel" required>
+	      <select class="form-control input-sm" id="years" name="alignment" [(ngModel)]="model.alignment" #alignment="ngModel" >
 		<option>Oui</option>
 		<option>Non</option>
 		
@@ -29,7 +29,7 @@
 	</div>
     <div class = "form-group col-md-6 col-sm-6">
 		<label for="pincode">Position thickness*</label>
-	      <select class="form-control input-sm" id="years" name="positionthickness" [(ngModel)]="model.positionthickness" #positionthickness="ngModel" required>
+	      <select class="form-control input-sm" id="years" name="positionthickness" [(ngModel)]="model.positionthickness" #positionthickness="ngModel" >
 		
 		<option>Inferior</option>
 		<option>Superior</option>
@@ -38,20 +38,20 @@
 	</div>
      <div class = "form-group col-md-6 col-sm-6">
 		<label for="pincode">Position Edge*</label>
-	      <select class="form-control input-sm" id="years" name="positionedge" [(ngModel)]="model.positionedge" #positionedge="ngModel" required>
+	      <select class="form-control input-sm" id="years" name="positionedge" [(ngModel)]="model.positionedge" #positionedge="ngModel" >
 		
 		<option>Left Edge</option>
 		<option>Right Edge</option>
-		<option>ribbon</option>
+		<option>Ribbon</option>
 	      </select>
 	</div>
 	<div class="form-group col-md-6 col-sm-6">
             <label for="city">Left Edge Position*</label>
-            <input type="text" class="form-control input-sm" id="city" name="positionleft" [(ngModel)]="model.positionleft" #positionleft="ngModel" required>
+            <input type="text" class="form-control input-sm" id="city" name="positionleft" [(ngModel)]="model.positionleft" #positionleft="ngModel" >
         </div>
         <div class = "form-group col-md-6 col-sm-6">
 		<label for="pincode">AG3</label>
-	      <select class="form-control input-sm" id="years" name="ag3" [(ngModel)]="model.ag3" #ag3="ngModel" required>
+	      <select class="form-control input-sm" id="years" name="ag3" [(ngModel)]="model.ag3" #ag3="ngModel" >
 	
 		<option>Oui</option>
 		<option>Non</option>
@@ -99,7 +99,7 @@
 </div>
 <div class="col-md-12 col-sm-12">
 	<div class="form-group col-md-3 col-sm-3 pull-right" >
-			<input type="submit"  (click)="save(model)" class="btn btn-primary" value="Submit"/>
+			<input type="button"  (click)="save(model)" class="btn btn-primary" value="Submit"/>
 	</div>
 </div>
 </form>

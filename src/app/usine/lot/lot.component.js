@@ -47,6 +47,10 @@ var LotComponent = (function () {
     LotComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };
+    LotComponent.prototype.delete = function (idlot) {
+        console.log(idlot);
+        this.lotService.delete(idlot);
+    };
     LotComponent.prototype.goAjoutlot = function () {
         this.router.navigate(['home/ajoutlot']);
     };

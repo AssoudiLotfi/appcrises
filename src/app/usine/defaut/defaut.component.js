@@ -30,6 +30,10 @@ var DefautComponent = (function () {
     DefautComponent.prototype.goAjoutdefaut = function () {
         this.router.navigate(['home/ajoutdefaut']);
     };
+    DefautComponent.prototype.delete = function (iddefaut) {
+        console.log(iddefaut);
+        this.defautService.delete(iddefaut);
+    };
     return DefautComponent;
 }());
 DefautComponent = __decorate([

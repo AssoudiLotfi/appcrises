@@ -60,6 +60,10 @@ constructor( private route : ActivatedRoute, private router : Router,private lot
 ngOnDestroy() {
     this.sub.unsubscribe();
   }
+  delete(idlot : number){
+    console.log(idlot);
+    this.lotService.delete(idlot);
+  }
 
  goAjoutlot() {
    this.router.navigate(['home/ajoutlot']);

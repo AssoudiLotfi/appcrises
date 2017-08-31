@@ -30,6 +30,10 @@ var DefautService = (function () {
             console.log('Something went wrong!', err);
         });
     };
+    DefautService.prototype.delete = function (iddefaut) {
+        return this.http.delete('http://localhost:8080/GestionCrise/rest/defaut/byid/' + iddefaut)
+            .subscribe(function (ok) { console.log(ok); });
+    };
     return DefautService;
 }());
 DefautService = __decorate([

@@ -29,5 +29,9 @@ export class DefautService {
     
     
 }
+delete(iddefaut:number){
+    return this.http.delete('http://localhost:8080/GestionCrise/rest/defaut/byid/'+iddefaut)
+    .subscribe((ok)=>{console.log(ok)});
+}
 }
 

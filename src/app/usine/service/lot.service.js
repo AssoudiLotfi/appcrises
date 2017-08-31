@@ -34,6 +34,10 @@ var LotService = (function () {
             console.log('Something went wrong!', err);
         });
     };
+    LotService.prototype.delete = function (idlot) {
+        return this.http.delete('http://localhost:8080/GestionCrise/rest/Lot/byid/' + idlot)
+            .subscribe(function (ok) { console.log(ok); });
+    };
     return LotService;
 }());
 LotService = __decorate([

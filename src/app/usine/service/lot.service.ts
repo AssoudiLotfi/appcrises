@@ -34,6 +34,10 @@ export class LotService {
         );
 
     }
+    delete(idlot:number){
+        return this.http.delete('http://localhost:8080/GestionCrise/rest/Lot/byid/'+idlot)
+        .subscribe((ok)=>{console.log(ok)});
+    }
 
    
     
