@@ -19,6 +19,10 @@ var DefautService = (function () {
         return this.http.get('http://localhost:8080/GestionCrise/rest/defaut/byLot')
             .map(function (res) { return res.json(); });
     };
+    DefautService.prototype.getdefautbyLot = function (idlot) {
+        return this.http.get('http://localhost:8080/GestionCrise/rest/defaut/ByIdLot/' + idlot)
+            .map(function (res) { return res.json(); });
+    };
     DefautService.prototype.save = function (defaut) {
         console.log(defaut);
         return this.http.post('http://localhost:8080/GestionCrise/rest/defaut/savedefaut', defaut)

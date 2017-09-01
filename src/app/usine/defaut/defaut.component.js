@@ -20,12 +20,27 @@ var DefautComponent = (function () {
     }
     DefautComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.loading = true;
-        this.defautService.getDefaultList()
-            .subscribe(function (response) {
-            _this.getdata = response;
-            console.log(_this.getdata);
-        }, function (error) { return console.log("error : " + error); });
+        this.sub = this.route
+            .queryParams
+            .subscribe(function (params) {
+            _this.idlot = +params['idlot'];
+            _this.loading = true;
+            console.log(params);
+            if (_this.idlot) {
+                _this.defautService.getdefautbyLot(_this.idlot)
+                    .subscribe(function (response) {
+                    _this.getdata = response;
+                    console.log(_this.getdata);
+                }, function (error) { return console.log("error : " + error); });
+            }
+            else {
+                _this.defautService.getDefaultList()
+                    .subscribe(function (response) {
+                    _this.getdata = response;
+                    console.log(_this.getdata);
+                }, function (error) { return console.log("error : " + error); });
+            }
+        });
     };
     DefautComponent.prototype.goAjoutdefaut = function () {
         this.router.navigate(['home/ajoutdefaut']);

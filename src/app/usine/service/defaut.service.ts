@@ -15,6 +15,11 @@ export class DefautService {
           .map((res : Response) => res.json())
        
     }
+
+    getdefautbyLot(idlot : number){
+        return this.http.get('http://localhost:8080/GestionCrise/rest/defaut/ByIdLot/'+idlot)
+        .map((res : Response) => res.json())
+    }
     save(defaut:any){
         console.log(defaut);
         return this.http.post('http://localhost:8080/GestionCrise/rest/defaut/savedefaut', defaut)

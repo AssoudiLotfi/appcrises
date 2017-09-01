@@ -20,6 +20,7 @@
                         <th style="width: 20px;"></th>
                         <th style="width: 25px;"></th>
                                         <th>ID Lot</th>
+                                        <th>ID Crise </th>
                                         <th>Progression</th>
                                         <th>Centre Analyse</th>
                                         <th>Level of emergency</th>
@@ -33,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="odd gradeX" *ngFor="let d of (getdata | search: search.value )">
+                    <tr class="odd gradeX" *ngFor="let d of (getdata | search: search.value )" (click)="getDefautByLot(d.idlot)">
                          <td >
       <span class="glyphicon glyphicon-trash" (click)="delete(d.idlot); $event.stopPropagation()"  aria-hidden="true"  style="color:red"></span> 
    </td>
@@ -41,7 +42,8 @@
       <span class="glyphicon glyphicon-pencil" aria-hidden="true" style="color:#478FCA"></span>
    </td>
                         
-                        <td>{{d.idlot}}</td>                       
+                        <td>{{d.idlot}}</td> 
+                        <td>{{d.crise_idcrise}}</td>                      
                         <td style="color:red">{{d.progression}}</td>
                         <td>{{d.centreanalyse}}</td>
                         <td>{{d.levelemergency}}</td>

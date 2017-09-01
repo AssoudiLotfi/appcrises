@@ -44,6 +44,9 @@ var LotComponent = (function () {
             }
         });
     };
+    LotComponent.prototype.getDefautByLot = function (idlot) {
+        this.router.navigate(['home/defaut/{idlot}'], { queryParams: { idlot: idlot } });
+    };
     LotComponent.prototype.ngOnDestroy = function () {
         this.sub.unsubscribe();
     };

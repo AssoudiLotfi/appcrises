@@ -19,6 +19,7 @@ var AppRoutes = [
             { path: 'lot', component: lot_component_1.LotComponent },
             { path: 'lot/:idcrise', component: lot_component_1.LotComponent },
             { path: 'defaut', component: defaut_component_1.DefautComponent },
+            { path: 'defaut/:idlot', component: defaut_component_1.DefautComponent },
             { path: 'etude', component: etude_component_1.EtudeComponent },
             { path: 'ajoutlot', component: ajoutlotf_component_1.AjoutlotComponent },
             { path: 'ajoutdefaut', component: ajoutdefaut_component_1.AjoutdefautComponent },

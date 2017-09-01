@@ -57,6 +57,10 @@ constructor( private route : ActivatedRoute, private router : Router,private lot
   
  }
 
+ getDefautByLot(idlot: number) {
+  this.router.navigate(['home/defaut/{idlot}'], { queryParams: { idlot: idlot } });
+  }
+
 ngOnDestroy() {
     this.sub.unsubscribe();
   }
