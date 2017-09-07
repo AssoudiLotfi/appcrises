@@ -10,14 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var usine_service_1 = require("../service/usine.service");
 var HomeComponent = (function () {
-    function HomeComponent(route, router) {
+    function HomeComponent(route, router, usineService) {
         this.route = route;
         this.router = router;
+        this.usineService = usineService;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        //Add 'implements OnInit' to the class.
+        this.getuser = JSON.parse(localStorage.getItem('currentUser')).nom;
+    };
+    HomeComponent.prototype.getUsine = function () {
+        var _this = this;
+        this.usineService.getUsine(JSON.parse(localStorage.getItem('currentUser')).usine_idusine)
+            .subscribe(function (response) {
+            _this.getusine = response;
+            console.log(11111);
+        }, function (error) { return console.log("error : " + error); });
     };
     HomeComponent.prototype.gologin = function () {
         this.router.navigate(['login']);
@@ -39,7 +48,7 @@ HomeComponent = __decorate([
         styleUrls: ['./home.component.css'],
         templateUrl: './home.component.html',
     }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router, usine_service_1.UsineService])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
 //# sourceMappingURL=home.component.js.map

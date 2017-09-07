@@ -25,7 +25,7 @@ constructor(private route : ActivatedRoute,private defautService : DefautService
   this.router.navigate(['home/defaut']); 
  }
 godefaut() {
-   this.router.navigate(['defaut']);
+   this.router.navigate(['home/defaut']);
    
  }
   gohome() {

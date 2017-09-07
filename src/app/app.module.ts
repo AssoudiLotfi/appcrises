@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 import { CriseService } from './usine/service/crise.service';
 import {LotService} from './usine/service/lot.service';
 import {DefautService} from './usine/service/defaut.service';
+import {UsineService } from './usine/service/usine.service';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {DefautService} from './usine/service/defaut.service';
   bootstrap:  [AppComponent],
 
    providers: [
-        AuthenticationService,CriseService,LotService,DefautService
+        AuthenticationService,CriseService,LotService,DefautService,UsineService
     ],
 })
 export class AppModule { }

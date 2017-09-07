@@ -30,6 +30,7 @@ var CriseComponent = (function () {
     CriseComponent.prototype.delete = function (idcrise) {
         console.log(idcrise);
         this.criseService.delete(idcrise);
+        this.ngOnInit();
     };
     CriseComponent.prototype.refresh = function () {
         this.router.navigate(["crise"]);

@@ -31,7 +31,7 @@ var AjoutdefautComponent = (function () {
         this.router.navigate(['home/defaut']);
     };
     AjoutdefautComponent.prototype.godefaut = function () {
-        this.router.navigate(['defaut']);
+        this.router.navigate(['home/defaut']);
     };
     AjoutdefautComponent.prototype.gohome = function () {
         this.router.navigate(['home']);

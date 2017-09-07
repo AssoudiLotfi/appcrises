@@ -25,10 +25,13 @@ var AjoutlotComponent = (function () {
     AjoutlotComponent.prototype.save = function (model) {
         model.crise_idcrise = 31;
         this.lotService.save(model);
-        this.router.navigate(['home/crise']);
+        this.router.navigate(['home/lot']);
     };
     AjoutlotComponent.prototype.gohome = function () {
         this.router.navigate(['home']);
+    };
+    AjoutlotComponent.prototype.golot = function () {
+        this.router.navigate(['home/lot']);
     };
     return AjoutlotComponent;
 }());

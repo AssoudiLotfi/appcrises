@@ -38,6 +38,8 @@ private criseService: CriseService){
    
    console.log(idcrise);
    this.criseService.delete(idcrise);
+   this.ngOnInit();
+
   
  }
 

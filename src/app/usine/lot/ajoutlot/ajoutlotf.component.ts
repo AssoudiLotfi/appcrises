@@ -23,11 +23,14 @@ save(model:any){
 
       model.crise_idcrise = 31;
       this.lotService.save(model);
-      this.router.navigate(['home/crise']);
+      this.router.navigate(['home/lot']);
 
 }
   gohome() {
    this.router.navigate(['home']);
  }
+ golot() {
+  this.router.navigate(['home/lot']);
+}
  
 }

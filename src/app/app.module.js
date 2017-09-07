@@ -25,6 +25,7 @@ var forms_1 = require("@angular/forms");
 var crise_service_1 = require("./usine/service/crise.service");
 var lot_service_1 = require("./usine/service/lot.service");
 var defaut_service_1 = require("./usine/service/defaut.service");
+var usine_service_1 = require("./usine/service/usine.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -45,7 +46,7 @@ AppModule = __decorate([
         ],
         bootstrap: [app_component_1.AppComponent],
         providers: [
-            authentification_service_1.AuthenticationService, crise_service_1.CriseService, lot_service_1.LotService, defaut_service_1.DefautService
+            authentification_service_1.AuthenticationService, crise_service_1.CriseService, lot_service_1.LotService, defaut_service_1.DefautService, usine_service_1.UsineService
         ],
     })
 ], AppModule);
