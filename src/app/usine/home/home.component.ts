@@ -8,7 +8,7 @@ import { UsineService } from '../service/usine.service';
 })
 export class HomeComponent implements OnInit {
   getuser: any;
-  getusine: any[];
+  getusine: any;
   nom: any;
   constructor(private route: ActivatedRoute, private router: Router, private usineService: UsineService) {
 
@@ -18,20 +18,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getuser = JSON.parse(localStorage.getItem('currentUser')).nom;
-    
-
-  }
-
-  getUsine() {
-    this.usineService.getUsine(JSON.parse(localStorage.getItem('currentUser')).usine_idusine)
+     this.usineService.getUsine(1)
       .subscribe(
       (response) => {
-      this.getusine = response;
-        console.log(11111);
-      },
+      this.getusine = response.nom;
+       },
       (error) => console.log("error : " + error)
       );
+
   }
+
+
   gologin() {
     this.router.navigate(['login']);
   }

@@ -40,14 +40,37 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="odd gradeX" *ngFor="let m of ( getdata | search: search.value )" (click)="getLotbyCrise(m.idcrise)" style="cursor: pointer;">
+                    <tr class="odd gradeX" *ngFor="let m of ( getdata | search: search.value )"  style="cursor: pointer;">
                          <td >
-      <span class="glyphicon glyphicon-trash" (click)="delete(m.idcrise); $event.stopPropagation()" aria-hidden="true"  style="color:red; cursor: pointer;"></span> 
+                            
+                     <span class="glyphicon glyphicon-trash"  data-toggle="modal" data-target="#deleteModal" aria-hidden="true"  style="color:red; cursor: pointer;"></span> 
+                    <div class="modal fade" id="deleteModal" role="dialog">
+                    <div class="modal-dialog" >
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Suppression</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Êtes-vous sûr de vouloir supprimer ?</p>
+                        </div>
+                        <div class="modal-footer">
+                            
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler </button>{{m.idcrise}}
+                            <button type="button" class="btn btn-primary" (click)="delete(m.idcrise)">Supprimer</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+ 
    </td>
    <td >
-      <span class="glyphicon glyphicon-pencil" aria-hidden="true" style="color:#478FCA"></span>
+      <span class="glyphicon glyphicon-pencil" aria-hidden="true" style="color:#478FCA" data-toggle="modal" data-target="#modifyModal"></span>
+
    </td>
-                        <td>{{m.idcrise}}</td>
+                        <td (click)="getLotbyCrise(m.idcrise)">{{m.idcrise}}</td>
                         <td style="color:red;min-width:100px">{{m.progression}}</td>
                         <td style="min-width:90px">{{m.startdate |  date:'shortDate'}}</td>
                         <td style="min-width:90px">{{m.finaldate | date:'shortDate'}}</td>
@@ -94,3 +117,40 @@
 <!-- /.row -->
 
 <!-- /.row -->
+
+
+<div class="container">
+  <h2>Small Modal</h2>
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal for delete-->
+  
+
+
+
+
+
+  <!-- Modal for Modify-->
+
+
+<div class="modal fade" id="modifyModal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modification</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>tes donnes</p>
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler </button>
+        <button type="button" class="btn btn-primary">Mettre a jour</button>
+      </div>
+    </div>
+  </div>
+</div>

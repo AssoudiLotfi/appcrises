@@ -18,14 +18,11 @@ var HomeComponent = (function () {
         this.usineService = usineService;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.getuser = JSON.parse(localStorage.getItem('currentUser')).nom;
-    };
-    HomeComponent.prototype.getUsine = function () {
         var _this = this;
-        this.usineService.getUsine(JSON.parse(localStorage.getItem('currentUser')).usine_idusine)
+        this.getuser = JSON.parse(localStorage.getItem('currentUser')).nom;
+        this.usineService.getUsine(1)
             .subscribe(function (response) {
-            _this.getusine = response;
-            console.log(11111);
+            _this.getusine = response.nom;
         }, function (error) { return console.log("error : " + error); });
     };
     HomeComponent.prototype.gologin = function () {
